@@ -71,7 +71,6 @@ void eliminate() {
   EliminationState start = new EliminationState.start(inputMatrix);
   EliminationStep step = start.nextStep();
   while (step != null) {
-    print('${step.description}: ${step.state.matrix}');
     container.append(step.toElement());
     step = step.state.nextStep();
   }
