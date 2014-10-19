@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elimination demo</title>
+    
+    <script async type="application/dart" src="elimination_demo.dart"></script>
+    <script async src="packages/browser/dart.js"></script>
+    
+    <link rel="stylesheet" href="elimination_demo.css">
+  </head>
+  <body>
+    <h1>Elimination demo</h1>
+    
+    <table id="matrix-controls">
+      <tr>
+        <td><button id="add-row-button">Add Row</button></td>
+        <td><button id="add-column-button">Add Column</button></td>
+      </tr>
+      <tr>
+        <td><button id="remove-row-button">Remove Row</button></td>
+        <td><button id="remove-column-button">Remove Column</button></td>
+      </tr>
+    </table>
+    <br />
+    <table id="input-matrix">
+    </table>
+    <br />
+    <button id="eliminate-button">Eliminate!</button>
+    
+    <div id="steps-output">
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,38 @@
+body {
+  background-color: #F8F8F8;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 15px;
+  text-align: center;
+}
+
+#matrix-controls, #input-matrix {
+  display: inline-block;
+}
+
+#matrix-controls button, #eliminate-button {
+  font-size: 13px;
+  width: 130px;
+  height: 30px;
+}
+
+.cell-input {
+  text-align: center;
+  width: 70px;
+  height: 30px;
+  font-size: 15px;
+}
+
+table.matrix {
+  display: inline-block;
+}
+
+table.matrix {
+  border: 1px solid black;
+}
+
+table.matrix td {
+  padding: 5px 5px 5px 5px;
+}
