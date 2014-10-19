@@ -41,7 +41,7 @@ class Matrix {
   }
   
   String getPrintableValue(int row, int col) {
-    return getCell(row, col).toStringAsPrecision(5);
+    return getCell(row, col).toString();
   }
   
   bool setPrintableValue(int row, int col, String value) {
