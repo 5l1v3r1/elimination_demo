@@ -26,6 +26,17 @@ class Matrix {
         cols = last.cols,
         values = new List.from(last.values);
   
+  Matrix.transpose(Matrix matrix)
+      : rows = matrix.cols,
+        cols = matrix.rows,
+        values = new List.filled(matrix.values.length, 0) {
+    for (var i = 0; i < rows; ++i) {
+      for (var j = 0; j < cols; ++j) {
+        setCell(i, j, matrix.getCell(j, i));
+      }
+    }
+  }
+  
   Rational getCell(int row, int col) {
     assert(row >= 0 && col >= 0);
     assert(row < rows);

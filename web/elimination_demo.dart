@@ -29,6 +29,17 @@ void main() {
   querySelector('#remove-column-button').onClick.listen((_) {
     modifyDimensions(0, -1);
   });
+  querySelector('#transpose-button').onClick.listen((_) {
+    inputMatrix = new Matrix.transpose(inputMatrix);
+    layoutMatrix();
+    matrixChanged();
+  });
+  querySelector('#clear-button').onClick.listen((_) {
+    for (var input in querySelectorAll('.cell-input')) {
+      input.value = '';
+    }
+    matrixChanged();
+  });
   
   querySelector('#eliminate-button').onClick.listen((_) {
     eliminate();
@@ -62,6 +73,7 @@ void layoutMatrix() {
 void modifyDimensions(int rows, int cols) {
   inputMatrix = new Matrix.from(max(1, inputMatrix.rows + rows),
       max(1, inputMatrix.cols + cols), inputMatrix);
+  matrixChanged();
   layoutMatrix();
 }
 
@@ -78,4 +90,8 @@ void eliminate() {
   endParagraph.innerHtml = 'Completed elimination into reduced row echelon'
       ' form.';
   container.append(endParagraph);
+}
+
+void matrixChanged() {
+  querySelector('#steps-output').innerHtml = '';
 }
